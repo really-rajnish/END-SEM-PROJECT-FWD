@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Remote Internship Hub</h1>
+        <p>Manage, Track, and Evaluate with Excellence</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1 style="font-size: 3rem; color: var(--accent-gold);">Your Career Starts Here</h1>
+        <p>The unified platform for Students, Mentors, and Employers.</p>
+    </section>
+
+    <section class="section">
+        <div class="card-container">
+           <a href="dashboard.html"> <div class="card" onclick="handleDashboardClick('student')">
+                
+                <h3> Student Dashboard</h3>
+                <p>Track your daily tasks, submit progress reports, and view your internship stats.</p>
+            </div>
+        </a>
+
+         <a href="employ.html" >  <div class="card" onclick="handleDashboardClick('employer')">
+                <h3> Employer Panel</h3>
+                <p>Post new internship opportunities and track the progress of your hired interns.</p>
+            </div>
+        </a>
+
+           <a href="mentor.html" ><div class="card" onclick="handleDashboardClick('mentor')">
+                <h3> Mentor Evaluation</h3>
+                <p>Review student submissions, provide feedback, and grade performance.</p>
+            </div> 
+        </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 KL University | FEDF Project PS-37</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Panel | Internship Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .static-card {
+            cursor: default;
+        }
+        .static-card:hover {
+            transform: none;
+            background: var(--bg-card);
+            border-color: var(--gold);
+        }
+        .static-card:hover h3 { color: var(--white); border-color: var(--gold); }
+        .static-card:hover p { color: var(--gray); }
+        
+        /* Table Actions */
+        .action-btn {
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            border: 1px solid #444;
+            color: #aaa;
+        }
+        .action-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+    </style>
+</head>
+<body onload="checkLogin()">
+
+    <header>
+        <h1>Employer Admin</h1>
+        <p>Talent Acquisition & Management</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#" style="border-right: none;">Settings</a>
+        <button class="nav-button" onclick="logout()" style="margin-left: auto; color: #cc3333; border-left: 1px solid rgba(255,255,255,0.1);">Logout</button>
+    </nav>
+
+    <div class="section">
+        <div class="card-container" style="align-items: flex-start;">
+
+            <div class="card static-card" style="width: 350px;">
+                <h3>🚀 New Opportunity</h3>
+                <p>Deploy a new internship listing to the portal.</p>
+                
+                <form onsubmit="postJob(event)">
+                    <input type="text" id="jobTitle" placeholder="POSITION TITLE" required>
+                    
+                    <textarea id="jobDesc" placeholder="REQUIREMENTS & DETAILS..." rows="4" required></textarea>
+                    
+                    <input type="number" id="jobStipend" placeholder="STIPEND AMOUNT ($)" required>
+                    
+                    <button type="submit" style="width: 100%; margin-top: 10px;">Publish Listing</button>
+                </form>
+            </div>
+
+            <div class="card static-card" style="width: 650px;">
+                <h3>👥 Active Personnel</h3>
+                <p>Track performance metrics of currently hired interns.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Intern Name</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="internTableBody">
+                        <tr>
+                            <td style="color: var(--white); font-weight: bold;">Hardik</td>
+                            <td>Frontend Dev</td>
+                            <td style="color: #4cd137;">ACTIVE</td>
+                            <td><button class="action-btn">View Details</button></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--white); font-weight: bold;">Manya Singh</td>
+                            <td>Data Analyst</td>
+                            <td style="color: var(--gold);">REVIEWING</td>
+                            <td><button class="action-btn">Evaluate</button></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--white); font-weight: bold;">Amrit Das</td>
+                            <td>Backend Eng</td>
+                            <td style="color: #aaa;">ON LEAVE</td>
+                            <td><button class="action-btn">Manage</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>System ID: FEDF-PS37 | Admin Access Only</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Internship Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        .static-card {
+            cursor: default;
+        }
+        .static-card:hover {
+            transform: none;
+            background: var(--bg-card); 
+            border-color: var(--gold);  
+        }
+        .static-card:hover h3 { color: var(--white); border-color: var(--gold); }
+        .static-card:hover p, .static-card:hover li { color: var(--gray); }
+
+        /* Status Badges */
+        .status-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            letter-spacing: 1px;
+        }
+        .pending { color: #aaa; border-color: #555; }
+        .done { color: var(--gold); border-color: var(--gold); }
+        
+        /* Task List */
+        .task-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body onload="checkLogin()">
+
+    <header>
+        <h1>Student Dashboard</h1>
+        <p id="welcome-msg">Welcome, Intern</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#" style="border-right: none;">Profile</a>
+        <button class="nav-button" onclick="logout()" style="margin-left: auto; color: #cc3333; border-left: 1px solid rgba(255,255,255,0.1);">Logout</button>
+    </nav>
+
+    <div class="section">
+        <div class="card-container" style="align-items: flex-start;">
+
+            <div class="card static-card" style="width: 400px;">
+                <h3>📝 Assigned Missions</h3>
+                <ul class="task-list" style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li>
+                        <span>UI Architecture</span>
+                        <span class="status-badge pending">In Progress</span>
+                    </li>
+                    <li>
+                        <span>Database Schema</span>
+                        <span class="status-badge done">Completed</span>
+                    </li>
+                    <li>
+                        <span>API Integration</span>
+                        <span class="status-badge pending">Pending</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card static-card" style="width: 400px;">
+                <h3>h Report Submission</h3>
+                <p>Submit your daily progress for mentor review.</p>
+                
+                <form onsubmit="submitReport(event)">
+                    <input type="text" placeholder="TASK TITLE (E.G. LOGIN PAGE)" required>
+                    
+                    <textarea placeholder="DESCRIPTION OF WORK OR GITHUB LINK..." rows="4" required></textarea>
+                    
+                    <button type="submit" style="width: 100%; margin-top: 10px;">Submit Report</button>
+                </form>
+            </div>
+
+            <div class="card static-card" style="width: 300px;">
+                <h3>💬 Mentor Feedback</h3>
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--gold); margin-bottom: 5px; font-family: 'Lato'; text-transform: uppercase; font-size: 0.8rem;">Latest Review</h4>
+                    <p style="font-style: italic; border-left: 2px solid var(--gold); padding-left: 15px;">
+                        "Excellent work on the database schema. The logic is sound. Please focus on the frontend connection next."
+                    </p>
+                    <p style="text-align: right; font-size: 0.8rem; margin-top: 10px;">- Senior Architect</p>
+                </div>
+                
+                <div style="margin-top: 40px; text-align: center;">
+                    <h1 style="font-size: 3rem; color: var(--gold); margin: 0;">A</h1>
+                    <p style="letter-spacing: 2px;">CURRENT GRADE</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>System ID: FEDF-PS37 | Secure Connection</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Evaluation | Internship Hub</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .static-card {
+            cursor: default;
+        }
+        .static-card:hover {
+            transform: none;
+            background: var(--bg-card);
+            border-color: var(--gold);
+        }
+        .static-card:hover h3 { color: var(--white); border-color: var(--gold); }
+        .static-card:hover p { color: var(--gray); }
+        
+        /* Specific Styles for Review Section */
+        .submission-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-left: 2px solid var(--gold);
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        .label-text {
+            font-size: 0.75rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            background: #000;
+            color: white;
+            padding: 15px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body onload="checkLogin()">
+
+    <header>
+        <h1>Mentor Hub</h1>
+        <p>Evaluation & Performance Grading</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#" style="border-right: none;">Students</a>
+        <button class="nav-button" onclick="logout()" style="margin-left: auto; color: #cc3333; border-left: 1px solid rgba(255,255,255,0.1);">Logout</button>
+    </nav>
+
+    <div class="section">
+        <div class="card-container" style="align-items: flex-start;">
+
+            <div class="card static-card" style="width: 300px;">
+                <h3>📑 Pending Reviews</h3>
+                <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li style="padding: 15px 0; border-bottom: 1px solid #222; cursor: pointer;">
+                        <span style="color: var(--white); font-weight: bold;">Rahul Verma</span><br>
+                        <span style="font-size: 0.8rem; color: var(--gold);">Task: Login UI</span>
+                    </li>
+                    <li style="padding: 15px 0; border-bottom: 1px solid #222; cursor: pointer; opacity: 0.5;">
+                        <span style="color: #aaa;">Priya K.</span><br>
+                        <span style="font-size: 0.8rem;">Task: API Setup</span>
+                    </li>
+                    <li style="padding: 15px 0; border-bottom: 1px solid #222; cursor: pointer; opacity: 0.5;">
+                        <span style="color: #aaa;">John Doe</span><br>
+                        <span style="font-size: 0.8rem;">Task: Database</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card static-card" style="width: 500px;">
+                <h3>📝 Grade Submission</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    <div>
+                        <span class="label-text">Student</span>
+                        <span style="font-size: 1.2rem; font-weight: bold;">Rahul Verma</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="label-text">Task ID</span>
+                        <span>#FE-004</span>
+                    </div>
+                </div>
+
+                <span class="label-text">Submission Content</span>
+                <div class="submission-box">
+                    "I have completed the flexbox layout for the login page. The responsiveness is handled using media queries. Here is the GitHub link..."
+                </div>
+                
+                <form onsubmit="submitFeedback(event)">
+                    <span class="label-text">Mentor Feedback</span>
+                    <textarea placeholder="WRITE CONSTRUCTIVE FEEDBACK HERE..." rows="3" required></textarea>
+                    
+                    <span class="label-text">Assign Grade</span>
+                    <select>
+                        <option>A - Excellent</option>
+                        <option>B - Good</option>
+                        <option>C - Satisfactory</option>
+                        <option>D - Needs Improvement</option>
+                    </select>
+                    
+                    <button type="submit" style="width: 100%;">Submit Evaluation</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>System ID: FEDF-PS37 | Mentor Access Only</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Register</h1></header>
+    <nav><a href="index.html">Back to Home</a></nav>
+
+    <div class="section" style="max-width: 400px;">
+        <div class="card" style="width: 100%; cursor: default;">
+            <form onsubmit="registerUser(event)">
+                <h3 style="text-align: center;">Create Account</h3>
+                <label>Full Name</label>
+                <input type="text" id="regName" required>
+                <label>Email</label>
+                <input type="email" id="regEmail" required>
+                <label>Password</label>
+                <input type="password" id="regPass" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
